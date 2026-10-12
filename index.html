@@ -42,6 +42,22 @@ img{max-width:100%}
 body{background:var(--color-bg);color:var(--color-fg);font-family:var(--font-anthropic-sans);font-size:var(--cds-font-size-body);line-height:1.5}
 #dash-root{max-width:1400px;margin-inline:auto;padding:max(20px,env(safe-area-inset-top)) clamp(16px,3vw,40px) 40px}
 .dash-skeleton{color:transparent!important;background:var(--cds-chart-muted);border-radius:6px;min-width:3ch;display:inline-block}
+.oh-pdf{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;border:1px solid var(--color-border-line);background:var(--color-panel);color:var(--color-fg);font-size:var(--cds-font-size-caption);white-space:nowrap}
+.oh-pdf:hover{border-color:var(--color-fg-muted)}
+.oh-pdf:focus-visible{outline:2px solid var(--color-fg);outline-offset:2px}
+.oh-pdf[disabled]{opacity:.6;cursor:progress}
+.exporting .oh-tabs,.exporting .oh-mode,.exporting .oh-pdf,.exporting .oh-tip,.exporting input[type=search]{display:none!important}
+.exporting .oh-tblbox{max-height:none!important;overflow:visible!important}
+.exporting .oh th{position:static!important}
+.exporting #dash-root{max-width:none!important;margin:0!important;padding:28px 32px!important}
+.exporting .oh table{font-size:10.5px;width:100%;max-width:100%}
+.exporting .oh th button{padding:6px 5px;white-space:normal}
+.exporting .oh td{padding:4px 5px}
+.exporting .oh td:first-child{min-width:9rem}
+.exporting .oh td.ket{min-width:0;width:24%}
+.exporting .oh .pill{font-size:10px;padding:0 6px}
+.exporting .oh .tahap.r{background:#dbe8f6!important}
+.exporting .oh .tahap.p{background:#ebe3f7!important}
 .web-foot{margin-top:28px;padding-top:14px;border-top:1px solid var(--color-border-line);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);display:flex;flex-wrap:wrap;gap:6px 18px}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
@@ -1680,5 +1696,6 @@ dash.onData(() => {
 });
 dash.__start();
 </script>
+<script src="export.js"></script>
 </body>
 </html>
